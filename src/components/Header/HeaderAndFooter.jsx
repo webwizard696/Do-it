@@ -23,7 +23,7 @@ function HeaderAndFooter() {
 
     return(
         <div className='HeaderAndFooter'>
-            <p>You can</p>
+            <p>Do it🔨</p>
             <div className='boxIcon'>
                 <div className='iconNav'>
                     <FiEdit size={26} className='icon'/>
