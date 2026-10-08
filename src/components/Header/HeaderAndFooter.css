@@ -1,8 +1,35 @@
 .HeaderAndFooter{
     background-color: #ffff;
     width: 100%;
-    height: 40px;
+    height: 50px;
     align-items: center;
+    justify-content: space-between;
     display: flex;
-    font-size: 22px;
+    gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.boxIcon{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconNav{
+    width:  36px;
+    height: 36px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconNav:hover{
+    background-color: rgba(102, 102, 102, 0.146);
+    .icon{
+    color: rgba(21, 21, 255, 0.607);
+    }
 }
