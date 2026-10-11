@@ -5,7 +5,7 @@ function Home() {
         <div>
             <button type="button" className='creat'>+</button>
             <div className='answerQ'>
-                <p>div className='answerQ'</p>
+                <p>answerQ</p>
             </div>
         </div>
     )
