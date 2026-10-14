@@ -19,6 +19,12 @@ function Home() {
                             <input type="text" name="name" id="name" className='inputForm' />
                             <input type="checkbox" name="" id="" className='inputForm' />
                             <input type="time" name="" id="" className='inputForm' />
+                            <input type="color" name="" id="" />
+                            <div className='ToDoList'>
+                                +
+                            </div>
+                            <input type="submit" value="Cancel" />
+                            <input type="submit" value="Send" />
                         </div>
                     </form>
             )}

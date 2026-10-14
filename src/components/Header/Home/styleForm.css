@@ -1,13 +1,24 @@
 .titleForm {
     text-align: left;
 }
-
-.inputForm {
-    display: block;
-}
-
 .alinItems {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    display: flex;
+}
+
+.inputForm {
+    width: 60%;
+}
+
+.ToDoList {
+    width: 60%;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.29);
+    border-radius: 3px;
+    color: #ffffff;
+    text-align: right;
 }
