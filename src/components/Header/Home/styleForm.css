@@ -1,0 +1,13 @@
+.titleForm {
+    text-align: left;
+}
+
+.inputForm {
+    display: block;
+}
+
+.alinItems {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
