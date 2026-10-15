@@ -81,3 +81,20 @@
     padding: 8px;
     text-align: center;
 }
+
+.boxChoose {
+    width: 60%;
+    width: 64%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxChoose select {
+    padding: 8px;
+    border: green solid 2.3px;
+    border-radius: 4px;
+    font-weight: 600;
+    background-color: #ffffff62;
+    outline: none;
+}

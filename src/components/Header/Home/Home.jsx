@@ -25,6 +25,14 @@ function Home() {
                                 <input type="time" name="" id="" className='buttonDateBox' />
                             </div>
 
+                            <div className='boxChoose'>
+                                <select>
+                                    <option value="Work">Work</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Purchase">Purchase</option>
+                                </select>
+                            </div>
+
                             <div className='ToDoList'>
                                 <BiPlusCircle className='ToDoListIcon' />
                             </div>
