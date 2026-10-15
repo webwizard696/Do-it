@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BiPlusCircle } from 'react-icons/bi';
 import './Home.css';
 import './styleForm.css';
 
@@ -14,17 +15,15 @@ function Home() {
 
             {show && (
                     <form className='contactForm'>
-                        <h2 className='titleForm'>answerQ</h2>
+                        <h2 className='titleForm'>Write down the information.</h2>
                         <div className='alinItems'>
-                            <input type="text" name="name" id="name" className='inputForm' />
-                            <input type="checkbox" name="" id="" className='inputForm' />
-                            <input type="time" name="" id="" className='inputForm' />
-                            <input type="color" name="" id="" />
+                            <input type="text" placeholder='Name' name="name" id="name" className='inputForm' />
+                            <input type="time" name="time" className='inputForm' />
                             <div className='ToDoList'>
-                                +
+                                <BiPlusCircle className='ToDoListIcon' />
                             </div>
-                            <input type="submit" value="Cancel" />
-                            <input type="submit" value="Send" />
+                            <input type="button" value="Cancel" />
+                            <input type="button" value="Send" />
                         </div>
                     </form>
             )}

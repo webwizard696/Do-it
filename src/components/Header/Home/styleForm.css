@@ -8,17 +8,30 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    gap: 18px;
 }
 
 .inputForm {
     width: 60%;
+    height: 20px;
+    background-color: #ffffff62;
+    border: green solid 2.3px;
+    border-radius: 4px;
+    padding: 8px;
 }
 
 .ToDoList {
+    display: flex;
     width: 60%;
     height: 20px;
-    background-color: rgba(0, 0, 0, 0.29);
+    background-color: #ffffff62;
     border-radius: 3px;
-    color: #ffffff;
     text-align: right;
+    padding: 10px;
+    align-items: center;
+    justify-content: end;
+}
+
+.ToDoListIcon{
+    font-size: 21px;
 }
