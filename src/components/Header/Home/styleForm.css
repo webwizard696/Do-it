@@ -33,7 +33,11 @@
 }
 
 .ToDoListIcon{
-    font-size: 21px;
+    font-size: 22px;
+}
+
+.inputTime{
+    text-align: center;
 }
 
 .boxButton {
