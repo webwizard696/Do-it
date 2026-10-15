@@ -64,3 +64,20 @@
 .red {
     background-color: rgb(209, 86, 86);
 }
+
+.boxButtonDate{
+    width: 64%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttonDateBox{
+    width: 40%;
+    height: 20px;
+    background-color: #ffffff62;
+    border: green solid 2.3px;
+    border-radius: 4px;
+    padding: 8px;
+    text-align: center;
+}
