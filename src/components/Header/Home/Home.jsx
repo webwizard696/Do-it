@@ -31,6 +31,11 @@ function Home() {
                                     <option value="Education">Education</option>
                                     <option value="Purchase">Purchase</option>
                                 </select>
+                                <select>
+                                    <option value="very">very</option>
+                                    <option value="Average">Average</option>
+                                    <option value="Little">Little</option>
+                                </select>
                             </div>
 
                             <div className='ToDoList'>
