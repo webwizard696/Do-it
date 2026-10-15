@@ -23,8 +23,8 @@ function Home() {
                                 <BiPlusCircle className='ToDoListIcon' />
                             </div>
                             <div className='boxButton'>
-                                <input type="button" value="Cancel" className='buttonBox' />
-                                <input type="button" value="Send" className='buttonBox' />
+                                <input type="button" value="Cancel" className='buttonBox red' />
+                                <input type="button" value="Send" className='buttonBox green' />
                             </div>
                         </div>
                     </form>
