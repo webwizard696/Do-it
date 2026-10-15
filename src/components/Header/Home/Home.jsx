@@ -22,8 +22,10 @@ function Home() {
                             <div className='ToDoList'>
                                 <BiPlusCircle className='ToDoListIcon' />
                             </div>
-                            <input type="button" value="Cancel" />
-                            <input type="button" value="Send" />
+                            <div className='boxButton'>
+                                <input type="button" value="Cancel" className='buttonBox' />
+                                <input type="button" value="Send" className='buttonBox' />
+                            </div>
                         </div>
                     </form>
             )}

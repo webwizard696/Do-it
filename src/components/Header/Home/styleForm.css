@@ -35,3 +35,17 @@
 .ToDoListIcon{
     font-size: 21px;
 }
+
+.boxButton {
+    position: fixed;
+    bottom: 20px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttonBox{
+    width: 20%;
+    padding: 10px;
+}
