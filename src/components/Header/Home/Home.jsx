@@ -21,20 +21,21 @@ function Home() {
                             <input type="text" placeholder='Name' name="name" id="name" className='inputForm' />
                             
                             <div className='boxButtonDate'>
-                                <input type="date" name="" id="" className='buttonDateBox' />
-                                <input type="time" name="" id="" className='buttonDateBox' />
+                                <input type="time" className='buttonDateBox' />
                             </div>
 
                             <div className='boxChoose'>
                                 <select>
+                                    <option value="Category">Category</option>
                                     <option value="Work">Work</option>
                                     <option value="Education">Education</option>
                                     <option value="Purchase">Purchase</option>
                                 </select>
                                 <select>
-                                    <option value="very">very</option>
-                                    <option value="Average">Average</option>
+                                    <option value="Priority">Priority</option>
                                     <option value="Little">Little</option>
+                                    <option value="Average">Average</option>
+                                    <option value="very">very</option>
                                 </select>
                             </div>
 
