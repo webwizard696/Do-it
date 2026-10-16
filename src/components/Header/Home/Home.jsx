@@ -9,6 +9,23 @@ function Home() {
     const onclick = () =>{
         hidden(!show);
     }
+
+
+
+    const [input, ClickNewInput] = useState([]);
+
+    const addNewInput = () => {
+        ClickNewInput([...input, '']);
+    };
+
+     const NewInput = (index, value) => {
+        const newInputs = [...input];
+        newInputs[index] = value;
+        ClickNewInput(newInputs);
+    };
+
+
+
     return(
         <>
             <button type="button" className='creat' onClick={onclick}>+</button>
