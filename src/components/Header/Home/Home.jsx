@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BiPlusCircle } from 'react-icons/bi';
+import { BiPlusCircle, BiSolidXCircle  } from 'react-icons/bi';
 import './Home.css';
 import './styleForm.css';
 
@@ -57,7 +57,13 @@ function Home() {
                             </div>
 
                             <div className='ToDoList'>
-                                <BiPlusCircle className='ToDoListIcon' />
+                                <BiSolidXCircle className='ToDoListIcon' />
+                                <div className='boxInputs'>
+                                    {input.map((value, index) => (
+                                        <input key={index} type="text" value={value} onChange={(e) => NewInput(index, e.target.value)} placeholder={`Work ${index + 1}`} className='newInput' />
+                                    ))}
+                                </div>
+                                <BiPlusCircle className='ToDoListIcon' onClick={addNewInput} />
                             </div>
 
                             <div className='boxButton'>
