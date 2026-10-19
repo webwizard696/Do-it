@@ -24,15 +24,15 @@
     position: relative;
     display: flex;
     width: 80%;
-    height: 120px;
+    height: 135px;
     background-color: #ffffff62;
     border-radius: 3px;
     text-align: right;
-    padding: 10px;
+    padding: 0 20px;
     align-items: center;
     justify-content: space-between;
     border: rgb(227, 221, 28) 2px solid;
-    gap: 5px;
+    gap: 30px;
     overflow: hidden;
 }
 
@@ -49,9 +49,12 @@
 .boxInputs{
     width: 70%;
     height: 100%;
-    padding: 0 20px;
+    padding: 2px;
     overflow-y: auto;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 .boxInputs::-webkit-scrollbar {
     width: 6px;
@@ -65,12 +68,12 @@
 
 .newInput {
     display: block;
-    width: 100%;
-    height: 20px;
+    width: 90%;
     background-color: #ffffff62;
     border: green solid 2.3px;
     border-radius: 4px;
-    padding: 8px;
+    padding: 12px;
+    font-size: 16px;
 }
 
 
