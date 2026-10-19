@@ -25,6 +25,13 @@ function Home() {
     };
 
 
+    const deleteInput = () => {
+    if (input.length > 0) {
+        const remove = input.slice(0, -1);
+        ClickNewInput(remove);
+    }
+};
+
 
     return(
         <>
@@ -57,7 +64,7 @@ function Home() {
                             </div>
 
                             <div className='ToDoList'>
-                                <BiSolidXCircle className='ToDoListIcon' />
+                                <BiSolidXCircle className='ToDoListIcon' onClick={deleteInput} />
                                 <div className='boxInputs'>
                                     {input.map((value, index) => (
                                         <input key={index} type="text" value={value} onChange={(e) => NewInput(index, e.target.value)} placeholder={`Work ${index + 1}`} className='newInput' />
