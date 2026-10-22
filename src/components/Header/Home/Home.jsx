@@ -36,20 +36,24 @@ const [Alert, setXAlert] = useState(false);
 const [alertMessage, setAlertMessage] = useState('');
 const [name, setName] = useState('');
 const [time, setTime] = useState('');
+const [alertType, jaAlertType] = useState('error');
+
 const handleSend = () => {
     
 
     if (name.trim() === '' || time === '') {
             setAlertMessage('⚠️Please fill in the name and time⚠️');
             setXAlert(true);
-            setTimeout(() => setXAlert(false), 3000);
+            setTimeout(() => setXAlert(false), 5000);
+            jaAlertType('error');
             return;
         }
 
         if (input.length === 0) {
             setAlertMessage('⚠️Please enter at least one task⚠️');
             setXAlert(true);
-            setTimeout(() => setXAlert(false), 3000);
+            setTimeout(() => setXAlert(false), 5000);
+            jaAlertType('error');
             return;
         }
 
@@ -57,9 +61,11 @@ const handleSend = () => {
 
     if (allFilled) {
         setAlertMessage('✅Create the form✅');
+        jaAlertType('success');
         setXAlert(true);
     } else {
         setAlertMessage('⚠️Please fill out the form⚠️');
+        jaAlertType('error');
         setXAlert(true);
     }
     setTimeout(() => setXAlert(false), 5000);
@@ -114,7 +120,7 @@ const handleSend = () => {
             )}
 
             {Alert && (
-                <div className={`alertBox ${input.length > 0 && input.every(v => v.trim() !== '') ? 'success' : 'error'}`}>
+                <div className={`alertBox ${alertType}`}>
                     {alertMessage}
                 </div>
             )}
