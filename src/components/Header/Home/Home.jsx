@@ -32,6 +32,23 @@ function Home() {
     }
 };
 
+const [Alert, setXAlert] = useState(false);
+const [alertMessage, setAlertMessage] = useState('');
+const handleSend = () => {
+    const allFilled = input.length > 0 && input.every(value => value.trim() !== '');
+
+    if (allFilled) {
+        setAlertMessage('✅ اطلاعات با موفقیت ارسال شد!');
+        setXAlert(true);
+    } else {
+        setAlertMessage('⚠️ لطفاً همه کارها را پر کنید!');
+        setXAlert(true);
+    }
+
+    // بستن هشدار بعد از ۳ ثانیه
+    setTimeout(() => setXAlert(false), 3000);
+};
+
 
     return(
         <>
@@ -50,13 +67,11 @@ function Home() {
 
                             <div className='boxChoose'>
                                 <select>
-                                    <option value="Category">Category</option>
                                     <option value="Work">Work</option>
                                     <option value="Education">Education</option>
                                     <option value="Purchase">Purchase</option>
                                 </select>
                                 <select>
-                                    <option value="Priority">Priority</option>
                                     <option value="Little">Little</option>
                                     <option value="Average">Average</option>
                                     <option value="very">very</option>
@@ -75,7 +90,15 @@ function Home() {
 
                             <div className='boxButton'>
                                 <input type="button" value="Cancel" className='buttonBox red' onClick={onclick} />
-                                <input type="button" value="Send" className='buttonBox green' />
+
+    {/* ✅ این بخش رو اضافه کن */}
+    {Alert && (
+        <div className={`alertBox ${input.length > 0 && input.every(v => v.trim() !== '') ? 'success' : 'error'}`}>
+            {alertMessage}
+        </div>
+    )}
+
+                                <input type="button" value="Send" className='buttonBox green' onClick={handleSend} />
                             </div>
 
                         </div>
