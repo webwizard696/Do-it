@@ -38,15 +38,13 @@ const handleSend = () => {
     const allFilled = input.length > 0 && input.every(value => value.trim() !== '');
 
     if (allFilled) {
-        setAlertMessage('✅ اطلاعات با موفقیت ارسال شد!');
+        setAlertMessage('✅Create the form✅');
         setXAlert(true);
     } else {
-        setAlertMessage('⚠️ لطفاً همه کارها را پر کنید!');
+        setAlertMessage('⚠️Please fill out the form⚠️');
         setXAlert(true);
     }
-
-    // بستن هشدار بعد از ۳ ثانیه
-    setTimeout(() => setXAlert(false), 3000);
+    setTimeout(() => setXAlert(false), 5000);
 };
 
 
@@ -90,20 +88,18 @@ const handleSend = () => {
 
                             <div className='boxButton'>
                                 <input type="button" value="Cancel" className='buttonBox red' onClick={onclick} />
-
-    {/* ✅ این بخش رو اضافه کن */}
-    {Alert && (
-        <div className={`alertBox ${input.length > 0 && input.every(v => v.trim() !== '') ? 'success' : 'error'}`}>
-            {alertMessage}
-        </div>
-    )}
-
                                 <input type="button" value="Send" className='buttonBox green' onClick={handleSend} />
                             </div>
 
                         </div>
                     </form>
             )}
+
+                                {Alert && (
+                                    <div className={`alertBox ${input.length > 0 && input.every(v => v.trim() !== '') ? 'success' : 'error'}`}>
+                                        {alertMessage}
+                                    </div>
+                                )}
         </>
     )
 }
