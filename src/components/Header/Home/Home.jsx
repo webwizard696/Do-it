@@ -34,8 +34,26 @@ function Home() {
 
 const [Alert, setXAlert] = useState(false);
 const [alertMessage, setAlertMessage] = useState('');
+const [name, setName] = useState('');
+const [time, setTime] = useState('');
 const handleSend = () => {
-    const allFilled = input.length > 0 && input.every(value => value.trim() !== '');
+    
+
+    if (name.trim() === '' || time === '') {
+            setAlertMessage('⚠️Please fill in the name and time⚠️');
+            setXAlert(true);
+            setTimeout(() => setXAlert(false), 3000);
+            return;
+        }
+
+        if (input.length === 0) {
+            setAlertMessage('⚠️Please enter at least one task⚠️');
+            setXAlert(true);
+            setTimeout(() => setXAlert(false), 3000);
+            return;
+        }
+
+        const allFilled = input.length > 0 && input.every(value => value.trim() !== '');
 
     if (allFilled) {
         setAlertMessage('✅Create the form✅');
@@ -57,10 +75,10 @@ const handleSend = () => {
                         <h2 className='titleForm'>Write down the information.</h2>
                         <div className='alinItems'>
 
-                            <input type="text" placeholder='Name' name="name" id="name" className='inputForm' />
+                            <input type="text" placeholder='Name' id="name" className='inputForm' value={name} onChange={(e) => setName(e.target.value)} />
                             
                             <div className='boxButtonDate'>
-                                <input type="time" className='buttonDateBox' />
+                                <input type="time" className='buttonDateBox' value={time} onChange={(e) => setTime(e.target.value)} />
                             </div>
 
                             <div className='boxChoose'>
@@ -95,11 +113,11 @@ const handleSend = () => {
                     </form>
             )}
 
-                                {Alert && (
-                                    <div className={`alertBox ${input.length > 0 && input.every(v => v.trim() !== '') ? 'success' : 'error'}`}>
-                                        {alertMessage}
-                                    </div>
-                                )}
+            {Alert && (
+                <div className={`alertBox ${input.length > 0 && input.every(v => v.trim() !== '') ? 'success' : 'error'}`}>
+                    {alertMessage}
+                </div>
+            )}
         </>
     )
 }
