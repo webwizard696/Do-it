@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BiPlusCircle, BiSolidXCircle  } from 'react-icons/bi';
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import './Home.css';
 import './styleForm.css';
 
@@ -71,6 +72,10 @@ const handleSend = () => {
     setTimeout(() => setXAlert(false), 5000);
 };
 
+    const [inSide, outSide] = useState(false);
+    const answerChange = () => {
+        outSide(!inSide);
+    };
 
     return(
         <>
@@ -124,6 +129,11 @@ const handleSend = () => {
                     {alertMessage}
                 </div>
             )}
+
+            <div className='doIt' onClick={answerChange}>
+                {inSide ? <IoIosArrowDown size={24} /> : <IoIosArrowUp size={24} />}
+                <p>This is a Text for test</p>
+            </div>
         </>
     )
 }

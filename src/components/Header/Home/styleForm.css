@@ -169,3 +169,19 @@
     from { opacity: 0; transform: translateY(-20%); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+.doIt {
+    width: 60%;
+    height: auto;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 8px;
+}
+
+.doIt p {
+    font-size: 50px;
+}
