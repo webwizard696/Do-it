@@ -130,7 +130,7 @@ const handleSend = () => {
                 </div>
             )}
 
-            <div className='doIt' onClick={answerChange}>
+            <div className={`in ${inSide ? 'out' : ''}`} onClick={answerChange}>
                 {inSide ? <IoIosArrowDown size={24} /> : <IoIosArrowUp size={24} />}
                 <p>This is a Text for test</p>
             </div>
