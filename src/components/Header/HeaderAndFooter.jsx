@@ -1,7 +1,14 @@
 import './HeaderAndFooter.css';
 import { MdSettings } from 'react-icons/md';
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useState } from 'react';
 
 function HeaderAndFooter() {
+
+    const [inSide, outSide] = useState(false);
+    const answerChange = () => {
+        outSide(!inSide);
+    };
 
     return(
         <>
@@ -14,7 +21,9 @@ function HeaderAndFooter() {
             </div>
         </header>
 
-        <footer></footer>
+        <footer onClick={answerChange} className={`footer ${inSide ? 'go' : ''}`}>
+            {inSide ? <IoIosArrowDown size={24} /> : <IoIosArrowUp size={24} />}
+        </footer>
         </>
     )
 }
