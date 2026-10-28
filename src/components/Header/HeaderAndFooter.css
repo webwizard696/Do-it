@@ -52,9 +52,23 @@ p{
     z-index: 999;
     transition: all 0.6s ease;
     cursor: pointer;
+    gap: 0;
 }
 
 .go {
     width: 200px;
     border-radius: 8px;
+    gap: 15px;
+}
+
+.icon {
+    color: #000;
+}
+
+.footer .icon{
+    display: none;
+}
+
+.go .icon{
+    display: inline;
 }
