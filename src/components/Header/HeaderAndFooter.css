@@ -56,9 +56,11 @@ p{
 }
 
 .go {
-    width: 200px;
+    width: 350px;
     border-radius: 8px;
-    gap: 15px;
+    justify-content: space-between;
+    padding: 10px;
+    padding-right: 20px;
 }
 
 .icon {
@@ -71,4 +73,17 @@ p{
 
 .go .icon{
     display: inline;
+}
+
+.go .DownAndUp{
+    margin: 20px;
+}
+
+.go .iconDiv {
+    background-color: rgba(255, 255, 255, 0.263);
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 8px;
 }
