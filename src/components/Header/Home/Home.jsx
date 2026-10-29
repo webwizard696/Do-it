@@ -38,6 +38,7 @@ const [alertMessage, setAlertMessage] = useState('');
 const [name, setName] = useState('');
 const [time, setTime] = useState('');
 const [alertType, jaAlertType] = useState('error');
+const [cards, setCards] = useState([]);
 
 const handleSend = () => {
     
@@ -64,6 +65,17 @@ const handleSend = () => {
         setAlertMessage('✅Create the form✅');
         jaAlertType('success');
         setXAlert(true);
+
+        const newCard = {
+        id: Date.now(),
+        name: name,
+        time: time,
+        tasks: input};
+        setCards([...cards, newCard]);
+        setName('');
+        setTime('');
+        ClickNewInput([]);
+        
     } else {
         setAlertMessage('⚠️Please fill out the form⚠️');
         jaAlertType('error');
@@ -76,6 +88,7 @@ const handleSend = () => {
     const answerChange = () => {
         outSide(!inSide);
     };
+
 
     return(
         <>
@@ -130,10 +143,17 @@ const handleSend = () => {
                 </div>
             )}
 
-            <div className={`in ${inSide ? 'out' : ''}`} onClick={answerChange}>
-                {inSide ? <IoIosArrowDown size={24} /> : <IoIosArrowUp size={24} />}
-                <p>This is a Text for test</p>
-            </div>
+        {cards.map((card) => (
+        <div className='in' key={card.id}>
+            <p>Name: {card.name}</p>
+            <p>Time: {card.time}</p>
+            <ul>
+                {card.tasks.map((task, index) => (
+                    <li key={index}>{task}</li>
+                ))}
+            </ul>
+        </div>
+    ))}
         </>
     )
 }
