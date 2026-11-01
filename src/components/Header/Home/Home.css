@@ -67,6 +67,7 @@
     font-family:sans-serif;
     font-size: 13px;
     padding: 5px;
+    color: rgba(0, 0, 0, 0.684);
 }
 
 .squre{
@@ -74,4 +75,13 @@
     height: 18%;
     border-radius: 255px;
     background-color: red;
+}
+
+.styleDownAndUP{
+    padding: 5px;
+    width: 13px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
