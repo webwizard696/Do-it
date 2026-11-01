@@ -85,3 +85,19 @@
     justify-content: center;
     align-items: center;
 }
+
+.nameAndTimeCart {
+    height: 60px;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.styleName {
+    font-size: 35px;
+}
+
+.styleTime {
+    font-size: 15px;
+}

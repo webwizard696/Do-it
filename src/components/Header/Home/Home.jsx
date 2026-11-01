@@ -149,9 +149,11 @@ const handleSend = () => {
             <div className='styleDownAndUP'>
                 {inSide ? <IoIosArrowDown size={24} className='DownAndUp' /> : <IoIosArrowUp size={24} className='DownAndUp' />}
             </div>
-            {/* <p>{card.name}</p>
-            <p>{card.time}</p>
-            <ul>
+            <div className='nameAndTimeCart'>
+                <p className='styleName'>{card.name}</p>
+                <p className='styleTime'>{card.time}</p>
+            </div>
+            {/* <ul>
                 {card.tasks.map((task, index) => (
                     <li key={index}>{task}</li>
                 ))}

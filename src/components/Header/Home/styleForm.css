@@ -181,6 +181,7 @@
     transition: all 1s;
     padding: 15px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .coming {
