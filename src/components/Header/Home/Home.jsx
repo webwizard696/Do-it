@@ -144,14 +144,16 @@ const handleSend = () => {
             )}
 
         {cards.map((card) => (
-        <div className='in' key={card.id}>
-            <p>Name: {card.name}</p>
-            <p>Time: {card.time}</p>
+        <div className={`card ${inSide ? 'coming' : ''}`} key={card.id} onClick={answerChange}>
+            <div className='rank'><div className='squre'></div> work</div>
+            {/* {inSide ? <IoIosArrowDown size={24} className='DownAndUp' /> : <IoIosArrowUp size={24} className='DownAndUp' />}
+            <p>{card.name}</p>
+            <p>{card.time}</p>
             <ul>
                 {card.tasks.map((task, index) => (
                     <li key={index}>{task}</li>
                 ))}
-            </ul>
+            </ul> */}
         </div>
     ))}
         </>
