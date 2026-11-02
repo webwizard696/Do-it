@@ -36,20 +36,24 @@ function Home() {
 const [Alert, setXAlert] = useState(false);
 const [alertMessage, setAlertMessage] = useState('');
 const [name, setName] = useState('');
-const [time, setTime] = useState('');
 const [alertType, jaAlertType] = useState('error');
 const [cards, setCards] = useState([]);
+
+const [hour, setHour] = useState('12');
+const [minute, setMinute] = useState('00');
+const [second, setSecond] = useState('00');
+const [ampm, setAmpm] = useState('AM'); 
 
 const handleSend = () => {
     
 
-    if (name.trim() === '' || time === '') {
-            setAlertMessage('⚠️Please fill in the name and time⚠️');
-            setXAlert(true);
-            setTimeout(() => setXAlert(false), 5000);
-            jaAlertType('error');
-            return;
-        }
+    if (name.trim() === '' || hour === '') {
+    setAlertMessage('⚠️Please fill in the name and time⚠️');
+    setXAlert(true);
+    setTimeout(() => setXAlert(false), 5000);
+    jaAlertType('error');
+    return;
+}
 
         if (input.length === 0) {
             setAlertMessage('⚠️Please enter at least one task⚠️');
@@ -66,14 +70,22 @@ const handleSend = () => {
         jaAlertType('success');
         setXAlert(true);
 
+        const formattedTime = `${hour}:${minute}:${second} ${ampm}`;
+
         const newCard = {
-        id: Date.now(),
-        name: name,
-        time: time,
-        tasks: input};
+            id: Date.now(),
+            name: name,
+            time: formattedTime,
+            tasks: input
+        };
+
         setCards([...cards, newCard]);
+        
         setName('');
-        setTime('');
+        setHour('12');
+        setMinute('00');
+        setSecond('00');
+        setAmpm('AM');
         ClickNewInput([]);
         
     } else {
@@ -102,8 +114,39 @@ const handleSend = () => {
                             <input type="text" placeholder='Name' id="name" className='inputForm' value={name} onChange={(e) => setName(e.target.value)} />
                             
                             <div className='boxButtonDate'>
-                                <input type="time" className='buttonDateBox' value={time} onChange={(e) => setTime(e.target.value)} />
-                            </div>
+                            {/* ساعت */}
+                            <select value={hour} onChange={(e) => setHour(e.target.value)} className='dateSelect'>
+                                {Array.from({ length: 12 }, (_, i) => i + 1).map(h => (
+                                    <option key={h} value={h.toString().padStart(2, '0')}>
+                                        {h.toString().padStart(2, '0')}
+                                    </option>
+                                ))}
+                            </select>
+                            
+                            {/* دقیقه */}
+                            <select value={minute} onChange={(e) => setMinute(e.target.value)} className='dateSelect'>
+                                {Array.from({ length: 60 }, (_, i) => i).map(m => (
+                                    <option key={m} value={m.toString().padStart(2, '0')}>
+                                        {m.toString().padStart(2, '0')}
+                                    </option>
+                                ))}
+                            </select>
+                            
+                            {/* ثانیه */}
+                            <select value={second} onChange={(e) => setSecond(e.target.value)} className='dateSelect'>
+                                {Array.from({ length: 60 }, (_, i) => i).map(s => (
+                                    <option key={s} value={s.toString().padStart(2, '0')}>
+                                        {s.toString().padStart(2, '0')}
+                                    </option>
+                                ))}
+                            </select>
+                            
+                            {/* AM/PM */}
+                            <select value={ampm} onChange={(e) => setAmpm(e.target.value)} className='dateSelect'>
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
 
                             <div className='boxChoose'>
                                 <select>
@@ -153,11 +196,11 @@ const handleSend = () => {
                 <p className='styleName'>{card.name}</p>
                 <p className='styleTime'>{card.time}</p>
             </div>
-            {/* <ul>
+            <ul>
                 {card.tasks.map((task, index) => (
                     <li key={index}>{task}</li>
                 ))}
-            </ul> */}
+            </ul>
         </div>
     ))}
         </>
