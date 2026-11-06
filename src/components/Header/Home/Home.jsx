@@ -21,7 +21,6 @@ function Home() {
     const onclick = () => { hidden(!show); };
     const answerChange = () => { outSide(!inSide); };
 
-    // ===== مدیریت تسک‌های فرم =====
     const addNewInput = () => {
         ClickNewInput([...input, { text: '', done: false }]);
     };
@@ -38,7 +37,6 @@ function Home() {
         }
     };
 
-    // ===== مدیریت چک‌باکس توی کارت =====
     const toggleDoneInCard = (cardId, taskIndex) => {
         const updatedCards = cards.map(card => {
             if (card.id === cardId) {
@@ -160,7 +158,6 @@ function Home() {
                             </select>
                         </div>
 
-                        {/* ✅ فرم: فقط input متنی بدون چک‌باکس */}
                         <div className='ToDoList'>
                             <BiSolidXCircle className='ToDoListIcon' onClick={deleteInput} />
                             <div className='boxInputs'>
@@ -193,7 +190,6 @@ function Home() {
                 </div>
             )}
 
-            {/* ✅ کارت‌ها: با چک‌باکس و استایل لی */}
             {cards.map((card) => (
                 <div className={`card ${inSide ? 'coming' : ''}`} key={card.id}>
                     <div className='rank'><div className='squre'></div> work</div>
@@ -206,15 +202,8 @@ function Home() {
                     </div>
                     <ul>
                         {card.tasks.map((task, index) => (
-                            <li 
-                                key={index} 
-                                className={`taskItem ${task.done ? 'done' : ''}`}
-                            >
-                                <input 
-                                    type="checkbox" 
-                                    checked={task.done} 
-                                    onChange={() => toggleDoneInCard(card.id, index)}
-                                />
+                            <li key={index} className={`taskItem ${task.done ? 'done' : ''}`}>
+                                <input type="checkbox" checked={task.done} onChange={() => toggleDoneInCard(card.id, index)} />
                                 <span>{task.text}</span>
                             </li>
                         ))}
