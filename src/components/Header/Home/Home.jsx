@@ -18,6 +18,8 @@ function Home() {
     const [ampm, setAmpm] = useState('AM');
     const [inSide, outSide] = useState(false);
 
+    const [category, setCategory] = useState('Work');
+
     const onclick = () => { hidden(!show); };
     const answerChange = () => { outSide(!inSide); };
 
@@ -52,7 +54,6 @@ function Home() {
         setCards(updatedCards);
     };
 
-    // ===== ارسال فرم =====
     const handleSend = () => {
         if (name.trim() === '' || hour === '') {
             setAlertMessage('⚠️Please fill in the name and time⚠️');
@@ -83,7 +84,8 @@ function Home() {
                 id: Date.now(),
                 name: name,
                 time: formattedTime,
-                tasks: input
+                tasks: input,
+                category: category
             };
 
             setCards([...cards, newCard]);
@@ -146,7 +148,7 @@ function Home() {
                         </div>
 
                         <div className='boxChoose'>
-                            <select>
+                            <select value={category} onChange={(e) => setCategory(e.target.value)}>
                                 <option value="Work">Work</option>
                                 <option value="Education">Education</option>
                                 <option value="Purchase">Purchase</option>
@@ -192,7 +194,7 @@ function Home() {
 
             {cards.map((card) => (
                 <div className={`card ${inSide ? 'coming' : ''}`} key={card.id}>
-                    <div className='rank'><div className='squre'></div> work</div>
+                    <div className='rank'><div className='squre'></div> {card.category}</div>
                     <div className='styleDownAndUP' onClick={answerChange}>
                         {inSide ? <IoIosArrowDown size={24} className='DownAndUp' /> : <IoIosArrowUp size={24} className='DownAndUp' />}
                     </div>

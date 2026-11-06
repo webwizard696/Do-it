@@ -56,7 +56,7 @@
 }
 
 .rank{
-    width: 40px;
+    width: auto;
     height: 20px;
     background-color: rgba(0, 0, 0, 0.07);
     display: flex;
@@ -67,11 +67,12 @@
     font-size: 13px;
     padding: 5px;
     color: rgba(0, 0, 0, 0.684);
+    gap: 5px;
 }
 
 .squre{
-    width: 10%;
-    height: 18%;
+    width: 5px;
+    height: 5px;
     border-radius: 255px;
     background-color: red;
 }
