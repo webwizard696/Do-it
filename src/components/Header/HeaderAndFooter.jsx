@@ -17,7 +17,7 @@ function HeaderAndFooter() {
             <p>Do it🔨</p>
             <div className='boxIcon'>
                 <div className='iconNav'>
-                    <MdSettings size={28} className='icon'/>
+                    <MdSettings size={33} className='icon'/>
                 </div>
             </div>
         </header>

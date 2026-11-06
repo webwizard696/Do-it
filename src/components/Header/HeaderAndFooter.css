@@ -22,10 +22,11 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    border-radius: 6px;
 }
 
 .iconNav:hover{
-    background-color: rgba(102, 102, 102, 0.146);
+    background-color: rgba(102, 102, 102, 0.11);
     .icon{
     color: rgba(21, 21, 255, 0.607);
     }
