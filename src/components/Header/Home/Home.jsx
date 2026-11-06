@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BiPlusCircle, BiSolidXCircle } from 'react-icons/bi';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import './Home.css';
@@ -17,8 +17,29 @@ function Home() {
     const [second, setSecond] = useState('00');
     const [ampm, setAmpm] = useState('AM');
     const [inSide, outSide] = useState(false);
-
     const [category, setCategory] = useState('Work');
+
+    const [currentTime, setCurrentTime] = useState(new Date());
+
+    useEffect(() => {
+    const timer = setInterval(() => {
+        setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+}, []);
+
+const liveHour = currentTime.getHours();
+const liveMinute = currentTime.getMinutes();
+const liveSecond = currentTime.getSeconds();
+
+const formattedHour = liveHour.toString().padStart(2, '0');
+const formattedMinute = liveMinute.toString().padStart(2, '0');
+const formattedSecond = liveSecond.toString().padStart(2, '0');
+
+const ampmLive = liveHour >= 12 ? 'PM' : 'AM';
+const hour12 = liveHour % 12 || 12;
+const formattedHour12 = hour12.toString().padStart(2, '0');
 
     const onclick = () => { hidden(!show); };
     const answerChange = () => { outSide(!inSide); };
@@ -200,7 +221,7 @@ function Home() {
                     </div>
                     <div className='nameAndTimeCart'>
                         <p className='styleName'>{card.name}</p>
-                        <p className='styleTime'>{card.time}</p>
+                        <div className='styleTime'><span className='styleTimeChoes'>{card.time}</span> ⏰ <span> {formattedHour12}:{formattedMinute}:{formattedSecond} {ampmLive}</span></div>
                     </div>
                     <ul>
                         {card.tasks.map((task, index) => (
