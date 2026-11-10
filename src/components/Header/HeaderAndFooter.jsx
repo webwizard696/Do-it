@@ -16,6 +16,11 @@ function HeaderAndFooter() {
         open(!isMenuOpen);
     };
 
+    const [up, down] = useState(false);
+    const closeThenOpen = () => {
+        down(!up);
+    }
+
     return(
         <>
         <header className='HeaderAndFooter'>
@@ -42,6 +47,10 @@ function HeaderAndFooter() {
 
         <div className={`sideMenu ${isMenuOpen ? 'open' : ''}`}>
         <ul>
+            <div>
+                <span>open</span>
+            </div>
+            {inSide ? <IoIosArrowDown size={24} className='DownAndUp' /> : <IoIosArrowUp size={24} className='DownAndUp' />}
             <li>001011100</li>
             <li>001011100</li>
             <li>001011100</li>
