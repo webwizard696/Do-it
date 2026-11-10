@@ -48,8 +48,7 @@ function HeaderAndFooter() {
         <div className={`sideMenu ${isMenuOpen ? 'open' : ''}`}>
         <ul>
             <div onClick={closeThenOpen}>
-                <span>open</span>
-                {up ? <IoIosArrowDown size={24} className='DownAndUp' /> : <IoIosArrowUp size={24} className='DownAndUp' />}
+                <p>open {up ? <IoIosArrowDown size={24} className='DownAndUp' /> : <IoIosArrowUp size={24} className='DownAndUp' />}</p>
             </div>
             <li>001011100</li>
             <li>001011100</li>
