@@ -11,12 +11,17 @@ function HeaderAndFooter() {
         outSide(!inSide);
     };
 
+    const [isMenuOpen, open] = useState(false);
+    const menu = () => {
+        open(!isMenuOpen);
+    };
+
     return(
         <>
         <header className='HeaderAndFooter'>
             <p>Do it🔨</p>
             <div className='boxIcon'>
-                <div className='iconNav'>
+                <div className='iconNav' onClick={menu}>
                     <MdSettings size={33} className='icon'/>
                 </div>
             </div>
@@ -34,6 +39,14 @@ function HeaderAndFooter() {
                 <MdSchool size={28} className='icon'/>
             </div>
         </footer>
+
+        <div className={`sideMenu ${isMenuOpen ? 'open' : ''}`}>
+        <ul>
+            <li>001011100</li>
+            <li>001011100</li>
+            <li>001011100</li>
+        </ul>
+        </div>
         </>
     )
 }
