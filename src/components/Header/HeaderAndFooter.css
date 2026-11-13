@@ -92,13 +92,12 @@ p{
 .sideMenu {
     position: fixed;
     top: 0;
-    left: -42%;
+    left: -42.6%;
     width: 40%;
     height: 100vh;
     color: white;
     z-index: 1000;
     padding: 20px;
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.378);
     transition: 1s ease-in-out;
     background-color: #1aaae1;
 }
@@ -106,6 +105,7 @@ p{
 .sideMenu.open {
     left: 0;
     background-color: #1a73e8;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.378);
 }
 
 .sideMenu ul {
@@ -113,12 +113,66 @@ p{
     padding: 0;
     margin-top: 20px;
     width: 90%;
-    background-color: #0000001a;
 }
 
 .sideMenu li {
     padding: 15px 10px;
     font-size: 18px;
     cursor: pointer;
-    display: none;
+}
+
+.divContactUs {
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.162);
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 4px;
+}
+
+.iconAndApp {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+    padding: 10px;
+}
+
+.iconAndApp li {
+    list-style: none;
+    justify-content: flex-start;
+    gap: 10px;
+    display: flex;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.iconAndApp li:active{
+    background-color: #969696a0;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    display: flex;
+}
+
+.styleContactUs{
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.74);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 5px;
+}
+
+.styleContactUs1{
+    max-height: 500px;
+    opacity: 1;
+    width: 100%;
+    padding: 5px;
+    border-radius: 8px;
+    overflow-y: auto;
 }

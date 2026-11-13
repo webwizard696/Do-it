@@ -2,7 +2,8 @@ import './HeaderAndFooter.css';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useState } from 'react';
 import { MdSettings, MdCalendarToday, MdSchool } from 'react-icons/md';
-import { BiNotepad  } from 'react-icons/bi';
+import { BiNotepad, BiLogoGmail  } from 'react-icons/bi';
+import { FaTelegram, FaInstagram, FaGithub} from 'react-icons/fa';
 
 function HeaderAndFooter() {
 
@@ -47,12 +48,17 @@ function HeaderAndFooter() {
 
         <div className={`sideMenu ${isMenuOpen ? 'open' : ''}`}>
         <ul>
-            <div onClick={closeThenOpen}>
-                <p>open {up ? <IoIosArrowDown size={24} className='DownAndUp' /> : <IoIosArrowUp size={24} className='DownAndUp' />}</p>
+            <div className='divContactUs' onClick={closeThenOpen}>
+                <p>Contact Us {up ? <IoIosArrowDown size={20} className='DownAndUp' /> : <IoIosArrowUp size={20} className='DownAndUp' />}</p>
             </div>
-            <li>001011100</li>
-            <li>001011100</li>
-            <li>001011100</li>
+            <div className='iconAndApp'>
+                <ul>
+                    <li><a href="https://t.me/Nrrrafj"><FaTelegram className='icon' size={28} /><span>Telegram</span></a></li>
+                    <li><a href="mailto:web.wizard.696@gmail.com"><BiLogoGmail className='icon' size={28} /><span>Email</span></a></li>
+                    <li><a href="https://github.com/webwizard696"><FaGithub className='icon' size={28} /><span>Github</span></a></li>
+                    <li><a href="http://instagram.com/hamze1010100011"><FaInstagram className='icon' size={28} /><span>Instagram</span></a></li>
+                </ul>
+            </div>
         </ul>
         </div>
         </>
