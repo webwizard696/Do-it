@@ -49,15 +49,13 @@ function HeaderAndFooter() {
         <div className={`sideMenu ${isMenuOpen ? 'open' : ''}`}>
         <ul>
             <div className='divContactUs' onClick={closeThenOpen}>
-                <p>Contact Us {up ? <IoIosArrowDown size={20} className='DownAndUp' /> : <IoIosArrowUp size={20} className='DownAndUp' />}</p>
+                <p>Contact us</p>
             </div>
             <div className='iconAndApp'>
-                <ul>
-                    <li><a href="https://t.me/Nrrrafj"><FaTelegram className='icon' size={28} /><span>Telegram</span></a></li>
-                    <li><a href="mailto:web.wizard.696@gmail.com"><BiLogoGmail className='icon' size={28} /><span>Email</span></a></li>
-                    <li><a href="https://github.com/webwizard696"><FaGithub className='icon' size={28} /><span>Github</span></a></li>
-                    <li><a href="http://instagram.com/hamze1010100011"><FaInstagram className='icon' size={28} /><span>Instagram</span></a></li>
-                </ul>
+                    <li><a href="https://t.me/Nrrrafj"><FaTelegram className='icon' size={35} /><strong>Telegram</strong></a></li>
+                    <li><a href="mailto:web.wizard.696@gmail.com"><BiLogoGmail className='icon' size={35} /><strong>Email</strong></a></li>
+                    <li><a href="https://github.com/webwizard696"><FaGithub className='icon' size={35} /><strong>Github</strong></a></li>
+                    <li><a href="http://instagram.com/hamze1010100011"><FaInstagram className='icon' size={35} /><strong>Instagram</strong></a></li>
             </div>
         </ul>
         </div>

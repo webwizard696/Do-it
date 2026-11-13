@@ -122,57 +122,51 @@ p{
 }
 
 .divContactUs {
-    width: 90%;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.162);
     display: flex;
     align-items: center;
-    padding: 0 30px;
-    border-radius: 4px;
+    padding: 6px;
+    border-radius:4px 4px 0 0;
+}
+
+.divContactUs p {
+    font-size: 23px;
 }
 
 .iconAndApp {
+    width: 100%;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
     gap: 15px;
-    padding: 10px;
+    padding: 6px;
+    background-color: #fdfdfd9f;
+    border-radius:0 0 4px 4px;
 }
 
 .iconAndApp li {
     list-style: none;
-    justify-content: flex-start;
     gap: 10px;
     display: flex;
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border-radius: 4px;
 }
 
 .iconAndApp li:active{
-    background-color: #969696a0;
+    background-color: #58585834;
 }
 
 a {
     color: rgb(0, 0, 0);
     display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
 }
 
-.styleContactUs{
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.74);
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 0 5px;
-}
-
-.styleContactUs1{
-    max-height: 500px;
-    opacity: 1;
-    width: 100%;
-    padding: 5px;
-    border-radius: 8px;
-    overflow-y: auto;
+a:hover {
+    color: #1a73e8;
 }
